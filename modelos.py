@@ -9,15 +9,17 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import RidgeCV
 from xgboost import XGBRegressor
 
+from sklearn.base import RegressorMixin
+from sklearn.utils import check_random_state
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 
 Algoritmo = namedtuple('Algoritmo', ['nome', 'modelo'])
 
-def construir_modelos(random_state=None):
+def construir_modelos(random_state: int | np.random.RandomState | None = None) -> list[RegressorMixin]:
     modelos = list()
-    random_state = np.random.RandomState(random_state)
+    random_state = check_random_state(random_state)
 
     # Árvores de decisão
     for criterio in ['squared_error', 'friedman_mse']:

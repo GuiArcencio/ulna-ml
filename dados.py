@@ -1,6 +1,6 @@
 import pandas as pd
 
-def ler_dados(coleta='paq', limpeza=True):
+def ler_dados(coleta: str = 'paq', limpeza: bool = True) -> tuple[pd.DataFrame, pd.Series]:
     dados = pd.read_csv(f'dados_ulna.csv')
     if limpeza:
         # Data cleaning
@@ -33,7 +33,7 @@ def ler_dados(coleta='paq', limpeza=True):
 
     return X, y
 
-def ler_dados_tempo(coleta='paq', limpeza=True):
+def ler_dados_tempo(coleta: str = 'paq', limpeza: bool = True) -> tuple[pd.DataFrame, pd.Series]:
     dados = pd.read_csv(f'dados_ulna.csv')
     if limpeza:
         # Data cleaning
