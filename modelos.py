@@ -113,7 +113,7 @@ def construir_modelos(random_state: int | np.random.RandomState | None = None) -
 
     # XGBoost - Lineares
     for n_modelos in [50, 100, 200]:
-        for selecionador in ['cyclic', 'random']:
+        for selecionador in ['cyclic', 'shuffle']:
             modelo = make_pipeline(
                 SimpleImputer(strategy='mean'),
                 XGBRegressor(
