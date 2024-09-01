@@ -1,13 +1,17 @@
+import pandas as pd
 import numpy as np
 
 from tqdm import tqdm
 
-from sklearn.base import clone
+from sklearn.base import clone, RegressorMixin
 from sklearn.model_selection import LeaveOneOut
 from sklearn.utils import check_random_state
 
-def validacao_cruzada(X, y, modelo, random_state=None):
-    random_state = check_random_state(random_state)
+def validacao_cruzada(
+        X: pd.DataFrame,
+        y: pd.Series | np.ndarray,
+        modelo: RegressorMixin
+    ) -> np.ndarray:
     loo = LeaveOneOut()
     y_pred = np.empty_like(y)
 
@@ -22,7 +26,6 @@ def validacao_cruzada(X, y, modelo, random_state=None):
         X_treino = X.iloc[indices_treino]
         X_teste = X.iloc[indices_teste]
         y_treino = y[indices_treino]
-        y_teste = y[indices_teste]
 
         modelo_sob_teste = clone(modelo)
         modelo_sob_teste.fit(X_treino, y_treino)

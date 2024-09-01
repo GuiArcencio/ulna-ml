@@ -1,6 +1,6 @@
 import numpy as np
 
-from collections import namedtuple
+from dataclasses import dataclass
 
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neighbors import KNeighborsRegressor
@@ -15,9 +15,12 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 
-Algoritmo = namedtuple('Algoritmo', ['nome', 'modelo'])
+@dataclass
+class Algoritmo:
+    nome: str
+    modelo: RegressorMixin
 
-def construir_modelos(random_state: int | np.random.RandomState | None = None) -> list[RegressorMixin]:
+def construir_modelos(random_state: int | np.random.RandomState | None = None) -> list[Algoritmo]:
     modelos = list()
     random_state = check_random_state(random_state)
 
@@ -27,7 +30,7 @@ def construir_modelos(random_state: int | np.random.RandomState | None = None) -
             SimpleImputer(strategy='mean'),
             DecisionTreeRegressor(
                 criterion=criterio,
-                random_state=random_state.randint(4294967296)
+                random_state=random_state
             )
         )
         nome = f'dt__{criterio}'
@@ -74,7 +77,7 @@ def construir_modelos(random_state: int | np.random.RandomState | None = None) -
                         n_estimators=n_arvores,
                         criterion=criterio,
                         max_features=colunas_usadas,
-                        random_state=random_state.randint(4294967296),
+                        random_state=random_state,
                         n_jobs=-1
                     )
                 )
@@ -101,7 +104,7 @@ def construir_modelos(random_state: int | np.random.RandomState | None = None) -
                             learning_rate=eta,
                             max_depth=profundidade_maxima,
                             subsample=subsample,
-                            random_state=random_state.randint(4294967296),
+                            random_state=random_state,
                             n_jobs=-1
                         )
                     )
@@ -117,7 +120,7 @@ def construir_modelos(random_state: int | np.random.RandomState | None = None) -
                     n_estimators=n_modelos,
                     booster='gblinear',
                     feature_selector=selecionador,
-                    random_state=random_state.randint(4294967296),
+                    random_state=random_state,
                     n_jobs=-1
                 )
             )
