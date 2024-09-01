@@ -1,4 +1,5 @@
 from os import makedirs
+from pathlib import Path
 
 import pandas as pd
 import numpy as np
@@ -65,15 +66,16 @@ def testar_modelos(
         algoritmos = construir_modelos(random_state)
         for i, alg in enumerate(algoritmos):
             print(f'CV: {alg.nome} ({i+1}/{len(algoritmos)})')
-
             classe = alg.nome.split('__')[0]
-            makedirs(f'{pasta}/{classe}', exist_ok=True)
 
-            resultado = pd.DataFrame({
-                'altura': y,
-                'altura_predita': validacao_cruzada(
-                    X, y, alg.modelo
-                )
-            })
-            resultado.to_csv(f'{pasta}/{classe}/{alg.nome}.csv', index=None)
+            if not Path(f'{pasta}/{classe}/{alg.nome}.csv').exists():
+                makedirs(f'{pasta}/{classe}', exist_ok=True)
+
+                resultado = pd.DataFrame({
+                    'altura': y,
+                    'altura_predita': validacao_cruzada(
+                        X, y, alg.modelo
+                    )
+                })
+                resultado.to_csv(f'{pasta}/{classe}/{alg.nome}.csv', index=None)
 
