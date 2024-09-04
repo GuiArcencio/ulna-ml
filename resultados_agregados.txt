@@ -1,0 +1,62 @@
+ALTURA COMO PREDITOR
+
+                     Modelo     RMSE       R2     MAPE
+           dt__friedman_mse 1.085825 0.971912 0.762560
+knn__5__cityblock__distance 1.047301 0.973869 0.702246
+                     linear 0.670017 0.989305 0.472330
+   rf__100__friedman_mse__0 0.815343 0.984163 0.575772
+             svm__linear__1 0.667648 0.989381 0.467190
+    xgb_linear__200__cyclic 3.964013 0.625652 2.925844
+           xgb_tree__100__0 0.821798 0.983911 0.574937
+
+-----------
+
+PREDIÇÃO NO TEMPO - PAQUÍMETRO
+
+                   Modelo     RMSE       R2     MAPE
+         dt__friedman_mse 4.098148 0.615415 2.966797
+knn__10__cosine__distance 2.894726 0.808119 2.113558
+                   linear 2.798290 0.820691 2.063691
+ rf__100__friedman_mse__0 2.879763 0.810097 2.162828
+           svm__poly__100 2.728314 0.829546 1.951336
+  xgb_linear__200__cyclic 4.031677 0.627789 2.998630
+          xgb_tree__50__0 2.928387 0.803630 2.181491
+
+-----------
+
+PREDIÇÃO TABULAR - PAQUÍMETRO
+
+                     Modelo     RMSE       R2     MAPE
+          dt__squared_error 3.905991 0.671234 3.006552
+knn__10__cityblock__uniform 2.884839 0.820664 2.232690
+                     linear 2.732700 0.839081 2.112656
+    rf__50__friedman_mse__0 2.911119 0.817382 2.238503
+              svm__poly__10 2.710243 0.841715 2.091569
+    xgb_linear__200__cyclic 3.869173 0.677403 3.036935
+            xgb_tree__50__0 2.814393 0.829316 2.157784
+
+-----------
+
+PREDIÇÃO NO TEMPO - PAPEL
+
+                     Modelo     RMSE       R2     MAPE
+           dt__friedman_mse 3.966840 0.639665 2.814681
+knn__5__cityblock__distance 2.980072 0.796637 2.139202
+                     linear 2.750832 0.826721 2.008045
+   rf__100__friedman_mse__0 3.035932 0.788942 2.185014
+             svm__linear__0 2.777710 0.823318 2.002375
+    xgb_linear__200__cyclic 4.042768 0.625738 3.017059
+            xgb_tree__50__0 3.047063 0.787392 2.198797
+
+-----------
+
+PREDIÇÃO TABULAR - PAPEL
+
+                     Modelo     RMSE       R2     MAPE
+          dt__squared_error 3.855854 0.679620 2.858620
+knn__10__cityblock__uniform 2.840858 0.826090 2.123004
+                     linear 2.634389 0.850451 2.010651
+   rf__25__squared_error__0 2.928215 0.815230 2.177676
+             svm__poly__100 2.627006 0.851288 2.010903
+    xgb_linear__200__cyclic 3.890807 0.673785 3.058560
+            xgb_tree__50__0 2.745448 0.837576 2.073531
