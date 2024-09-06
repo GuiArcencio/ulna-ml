@@ -1,62 +1,62 @@
 ALTURA COMO PREDITOR
 
                      Modelo     RMSE       R2     MAPE
-           dt__friedman_mse 1.085825 0.971912 0.762560
-knn__5__cityblock__distance 1.047301 0.973869 0.702246
-                     linear 0.670017 0.989305 0.472330
-   rf__100__friedman_mse__0 0.815343 0.984163 0.575772
-             svm__linear__1 0.667648 0.989381 0.467190
-    xgb_linear__200__cyclic 3.964013 0.625652 2.925844
-           xgb_tree__100__0 0.821798 0.983911 0.574937
+          dt__squared_error 1.112070 0.970537 0.777460
+knn__5__cityblock__distance 1.230653 0.963919 0.836107
+                     linear 0.652892 0.989845 0.458975
+  rf__100__squared_error__1 0.817196 0.984090 0.559765
+           svm__linear__100 0.655233 0.989772 0.459638
+   xgb_linear__200__shuffle 3.415933 0.722013 2.558725
+           xgb_tree__100__0 0.806926 0.984488 0.567854
 
 -----------
 
 PREDIÇÃO NO TEMPO - PAQUÍMETRO
 
-                   Modelo     RMSE       R2     MAPE
-         dt__friedman_mse 4.098148 0.615415 2.966797
-knn__10__cosine__distance 2.894726 0.808119 2.113558
-                   linear 2.798290 0.820691 2.063691
- rf__100__friedman_mse__0 2.879763 0.810097 2.162828
-           svm__poly__100 2.728314 0.829546 1.951336
-  xgb_linear__200__cyclic 4.031677 0.627789 2.998630
-          xgb_tree__50__0 2.928387 0.803630 2.181491
+                      Modelo     RMSE       R2     MAPE
+            dt__friedman_mse 3.832141 0.663720 2.657492
+knn__10__cityblock__distance 2.642644 0.840083 1.909666
+                      linear 2.513122 0.855375 1.816524
+    rf__25__squared_error__0 2.467368 0.860593 1.755616
+              svm__linear__1 2.520446 0.854530 1.853185
+    xgb_linear__200__shuffle 3.440102 0.729006 2.585949
+             xgb_tree__50__0 2.591335 0.846232 1.830970
 
 -----------
 
 PREDIÇÃO TABULAR - PAQUÍMETRO
 
-                     Modelo     RMSE       R2     MAPE
-          dt__squared_error 3.905991 0.671234 3.006552
-knn__10__cityblock__uniform 2.884839 0.820664 2.232690
-                     linear 2.732700 0.839081 2.112656
-    rf__50__friedman_mse__0 2.911119 0.817382 2.238503
-              svm__poly__10 2.710243 0.841715 2.091569
-    xgb_linear__200__cyclic 3.869173 0.677403 3.036935
-            xgb_tree__50__0 2.814393 0.829316 2.157784
+                      Modelo     RMSE       R2     MAPE
+            dt__friedman_mse 3.619570 0.717682 2.675938
+knn__10__cityblock__distance 2.477374 0.867746 1.907665
+                      linear 2.457041 0.869908 1.863892
+   rf__100__squared_error__0 2.517038 0.863478 1.896103
+               svm__rbf__100 2.407706 0.875080 1.806942
+     xgb_linear__200__cyclic 3.076763 0.796008 2.380147
+             xgb_tree__50__0 2.436375 0.872088 1.834181
 
 -----------
 
 PREDIÇÃO NO TEMPO - PAPEL
 
-                     Modelo     RMSE       R2     MAPE
-           dt__friedman_mse 3.966840 0.639665 2.814681
-knn__5__cityblock__distance 2.980072 0.796637 2.139202
-                     linear 2.750832 0.826721 2.008045
-   rf__100__friedman_mse__0 3.035932 0.788942 2.185014
-             svm__linear__0 2.777710 0.823318 2.002375
-    xgb_linear__200__cyclic 4.042768 0.625738 3.017059
-            xgb_tree__50__0 3.047063 0.787392 2.198797
+                      Modelo     RMSE       R2     MAPE
+           dt__squared_error 3.489530 0.721162 2.357920
+knn__10__cityblock__distance 2.616545 0.843226 1.875249
+                      linear 2.465236 0.860834 1.758744
+   rf__100__squared_error__0 2.603089 0.844834 1.835388
+              svm__linear__0 2.451940 0.862331 1.758930
+    xgb_linear__200__shuffle 3.448663 0.727655 2.590013
+             xgb_tree__50__0 2.540608 0.852194 1.821264
 
 -----------
 
 PREDIÇÃO TABULAR - PAPEL
 
                      Modelo     RMSE       R2     MAPE
-          dt__squared_error 3.855854 0.679620 2.858620
-knn__10__cityblock__uniform 2.840858 0.826090 2.123004
-                     linear 2.634389 0.850451 2.010651
-   rf__25__squared_error__0 2.928215 0.815230 2.177676
-             svm__poly__100 2.627006 0.851288 2.010903
-    xgb_linear__200__cyclic 3.890807 0.673785 3.058560
-            xgb_tree__50__0 2.745448 0.837576 2.073531
+           dt__friedman_mse 3.223083 0.776145 2.395285
+knn__5__cityblock__distance 2.360047 0.879977 1.769498
+                     linear 2.363379 0.879637 1.770792
+   rf__50__squared_error__0 2.352200 0.880773 1.734308
+              svm__poly__10 2.334080 0.882603 1.737863
+    xgb_linear__200__cyclic 3.082401 0.795260 2.385608
+            xgb_tree__50__0 2.273059 0.888661 1.710107

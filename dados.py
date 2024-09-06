@@ -13,7 +13,7 @@ def ler_dados(coleta: str = 'paq', limpeza: bool = True) -> tuple[pd.DataFrame, 
         'sexo': list(),
         'idade': list(),
         f'ulna-{coleta}': list(),
-        # 'peso': list(),
+        'peso': list(),
         'altura': list(),
     }
 
@@ -22,7 +22,7 @@ def ler_dados(coleta: str = 'paq', limpeza: bool = True) -> tuple[pd.DataFrame, 
             dataframe['sexo'].append(0 if row['sexo'] == 'masculino' else 1)
             dataframe['idade'].append(row['idade-meses'] + mes)
             dataframe[f'ulna-{coleta}'].append(row[f'ulna-{coleta}-{mes}'])
-            # dataframe['peso'].append(row[f'peso-{mes}'])
+            dataframe['peso'].append(row[f'peso-{mes}'])
             dataframe['altura'].append(row[f'altura-{mes}'])
 
     dataframe = pd.DataFrame(dataframe)
@@ -46,8 +46,8 @@ def ler_dados_tempo(coleta: str = 'paq', limpeza: bool = True) -> tuple[pd.DataF
         'idade': list(),
         f'ulna-{coleta}-0': list(),
         f'ulna-{coleta}-6': list(),
-        # 'peso-0': list(),
-        # 'peso-6': list(),
+        'peso-0': list(),
+        'peso-6': list(),
         'altura-9': list(),
     }
 
@@ -56,8 +56,8 @@ def ler_dados_tempo(coleta: str = 'paq', limpeza: bool = True) -> tuple[pd.DataF
         dataframe['idade'].append(row['idade-meses'])
         dataframe[f'ulna-{coleta}-0'].append(row[f'ulna-{coleta}-0'])
         dataframe[f'ulna-{coleta}-6'].append(row[f'ulna-{coleta}-6'])
-        # dataframe['peso-0'].append(row[f'peso-0'])
-        # dataframe['peso-6'].append(row[f'peso-6'])
+        dataframe['peso-0'].append(row[f'peso-0'])
+        dataframe['peso-6'].append(row[f'peso-6'])
         dataframe['altura-9'].append(row[f'altura-9'])
 
     dataframe = pd.DataFrame(dataframe)
@@ -79,8 +79,8 @@ def ler_dados_tempo_altura(limpeza: bool = True) -> tuple[pd.DataFrame, pd.Serie
         'idade': list(),
         f'altura-0': list(),
         f'altura-6': list(),
-        # 'peso-0': list(),
-        # 'peso-6': list(),
+        'peso-0': list(),
+        'peso-6': list(),
         'altura-9': list(),
     }
 
@@ -89,8 +89,8 @@ def ler_dados_tempo_altura(limpeza: bool = True) -> tuple[pd.DataFrame, pd.Serie
         dataframe['idade'].append(row['idade-meses'])
         dataframe[f'altura-0'].append(row[f'altura-0'])
         dataframe[f'altura-6'].append(row[f'altura-6'])
-        # dataframe['peso-0'].append(row[f'peso-0'])
-        # dataframe['peso-6'].append(row[f'peso-6'])
+        dataframe['peso-0'].append(row[f'peso-0'])
+        dataframe['peso-6'].append(row[f'peso-6'])
         dataframe['altura-9'].append(row[f'altura-9'])
 
     dataframe = pd.DataFrame(dataframe)
